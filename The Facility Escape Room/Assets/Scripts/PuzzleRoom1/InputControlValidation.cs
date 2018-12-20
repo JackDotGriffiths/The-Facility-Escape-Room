@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class InputControlValidation : MonoBehaviour {
 
-    public static bool guessed = false;
+    public static bool guessed;
 
     public Text InputBox;
     public GameObject Indicator1;
@@ -22,7 +23,14 @@ public class InputControlValidation : MonoBehaviour {
     public GameObject SubmitButton;
     public Animator DoorOpen;
 
+
     private string InputText;
+    public CharacterController characterController;
+
+    public void Awake()
+    {
+        guessed = false;
+    }
 
     public void Update()
     {
@@ -53,10 +61,14 @@ public class InputControlValidation : MonoBehaviour {
 
 
             guessed = true;
-            InputField.SetActive(false);
-            SubmitButton.SetActive(false);
+            characterController.enabled = true;
+            characterController.GetComponent<FirstPersonController>().enabled = true;
+
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            InputField.SetActive(false);
+            SubmitButton.SetActive(false);
             DoorOpen.Play("DoorOpen");
         }
         else
@@ -71,10 +83,14 @@ public class InputControlValidation : MonoBehaviour {
             ResultSound.Play();
 
             guessed = true;
-            InputField.SetActive(false);
-            SubmitButton.SetActive(false);
+            characterController.enabled = true;
+            characterController.GetComponent<FirstPersonController>().enabled = true;
+
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            InputField.SetActive(false);
+            SubmitButton.SetActive(false);
         }
         //if correct, turn indicator green and open door.
         //if incorrect, turn indicator red. 

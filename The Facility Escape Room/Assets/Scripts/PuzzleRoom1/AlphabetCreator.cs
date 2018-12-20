@@ -19,7 +19,7 @@ public class AlphabetCreator : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Awake() {
         StartValue = Random.Range(20, 200);
         Debug.Log("Start Value is " + StartValue);
         CreateAlphabetArrays();

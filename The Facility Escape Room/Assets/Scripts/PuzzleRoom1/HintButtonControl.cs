@@ -35,8 +35,12 @@ public class HintButtonControl : MonoBehaviour {
         {
             if (HintCounter < 3)
             {
-                HintLetter = Random.Range(0, RandomWordSelector.ChosenWord.Length);
                 Text Output = HintDisplay.GetComponent<Text>();
+                HintLetter = Random.Range(0, RandomWordSelector.ChosenWord.Length);
+                int HintIndex = HintLetter + 1;
+
+
+
                 Output.text = ("Letter number " + (HintLetter + 1) + " is: " + RandomWordSelector.ChosenWord[HintLetter]);
                 HintCounter += 1;
                 audioSource.clip = getHint;

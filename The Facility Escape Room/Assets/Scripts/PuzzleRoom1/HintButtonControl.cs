@@ -15,6 +15,10 @@ public class HintButtonControl : MonoBehaviour {
 
     public GameObject HintDisplay;
 
+    private void Awake()
+    {
+        InCollider = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -37,11 +41,28 @@ public class HintButtonControl : MonoBehaviour {
             {
                 Text Output = HintDisplay.GetComponent<Text>();
                 HintLetter = Random.Range(0, RandomWordSelector.ChosenWord.Length);
+
                 int HintIndex = HintLetter + 1;
+                string Suffix; 
+                if (HintIndex == 1)
+                {
+                    Suffix = "st";
+                }
+                else  if (HintIndex == 2)
+                {
+                    Suffix = "nd";
+                }
+                else if (HintIndex == 3)
+                {
+                    Suffix = "rd";
+                }
+                else
+                {
+                    Suffix = "th";
+                }
 
 
-
-                Output.text = ("Letter number " + (HintLetter + 1) + " is: " + RandomWordSelector.ChosenWord[HintLetter]);
+                Output.text = ("The " + HintIndex + Suffix + " letter in the answer is: " + RandomWordSelector.ChosenWord[HintLetter]);
                 HintCounter += 1;
                 audioSource.clip = getHint;
                 audioSource.Play();

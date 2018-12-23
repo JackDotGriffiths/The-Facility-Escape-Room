@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayCode : MonoBehaviour
 {
@@ -15,8 +16,14 @@ public class PlayCode : MonoBehaviour
     public AudioClip Note2;
     public AudioClip Note3;
     public AudioClip Note4;
+    public AudioClip Note5;
+    public AudioClip Note6;
+    public AudioClip Note7;
+    public AudioClip Note8;
+    public AudioClip Note9;
 
     public int CodeIndex;
+    public Text CodeOutput;
 
 
     private void Awake()
@@ -46,7 +53,6 @@ public class PlayCode : MonoBehaviour
         if (ObjectDetection.LookAtObject == ObjectName && Input.GetKeyDown(KeyCode.E) && InCollider == true && TuneStopped == true)
         {
             TuneStopped = false;
-            Debug.Log("Play Tune");
             StartCoroutine(playAudioClips());
         }
 
@@ -71,11 +77,11 @@ public class PlayCode : MonoBehaviour
             Array = CodeCreate.DoorCode4;
         }
 
+
         NoteArray = new AudioClip[Array.Length];
 
         for (int i = 0; i < Array.Length; i++)
         {
-            Debug.Log(Array.Length);
             switch (Array[i])
             {
                 case (1):
@@ -93,6 +99,26 @@ public class PlayCode : MonoBehaviour
                 case (4):
                     NoteArray[i] = Note4;
                     break;
+
+                case (5):
+                    NoteArray[i] = Note5;
+                    break;
+
+                case (6):
+                    NoteArray[i] = Note6;
+                    break;
+
+                case (7):
+                    NoteArray[i] = Note7;
+                    break;
+
+                case (8):
+                    NoteArray[i] = Note8;
+                    break;
+
+                case (9):
+                    NoteArray[i] = Note9;
+                    break;
             }
 
         }
@@ -105,15 +131,18 @@ public class PlayCode : MonoBehaviour
 
         for(int i = 0; i < NoteArray.Length; i++)
         {
+            CodeOutput.text = Array[i].ToString(); ;
             Speaker.clip = NoteArray[i];
             Speaker.Play();
             while (Speaker.isPlaying)
             {
                 yield return null;
             }
+            CodeOutput.text = "";
         }
         TuneStopped = true;
-        
+        CodeOutput.text = "<>";
+
     }
 }
 

@@ -27,7 +27,6 @@ public class KeypadButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void ButtonClick() {
-        Debug.Log("Click No. " + this.gameObject.name);
         if (KeypadInput.text == "_ _ _ _")
         {
             KeypadInput.text = "";

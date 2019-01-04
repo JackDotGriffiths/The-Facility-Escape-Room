@@ -7,14 +7,12 @@ public class PlayerCrouch : MonoBehaviour {
     private bool PlayerCrouching;
 	
 	void Update () {
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) || CrouchEnforceControl.PlayerInVents == true)
         {
-            Debug.Log("PlayerCrouch");
             PlayerCrouching = true;
         }
         else
         {
-            Debug.Log("PlayerStand");
             PlayerCrouching = false;
         }
 

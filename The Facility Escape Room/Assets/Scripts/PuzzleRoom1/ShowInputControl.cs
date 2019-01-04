@@ -46,7 +46,7 @@ public class ShowInputControl : MonoBehaviour {
             SubmitButton.SetActive(true);
             ShowingInput = true;
         }
-        else if (ObjectDetection.LookAtObject != "Plynth" || Input.GetKeyDown(KeyCode.Escape) || InCollider == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             characterController.enabled = true;
             characterController.GetComponent<FirstPersonController>().enabled = true;

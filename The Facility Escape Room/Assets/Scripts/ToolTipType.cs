@@ -8,15 +8,24 @@ public class ToolTipType : MonoBehaviour {
 
     public static string ToolTipText = " ";
     private string last_ToolTipText = " ";
-
     private string TooltipText;
+
     public AudioSource TypeAudioSource;
+    public AudioClip PaperRaiseSound;
+    public AudioClip TypeSound;
+
     public float Delay = 0.1f;
     public Text OutputText;
+    public GameObject Paper;
 
     void Start()
     {
         OutputText.text = "";
+    }
+
+    public static void CreateTooltip(string text)
+    {
+        ToolTipText = text;
     }
 
     private void Update()
@@ -36,25 +45,43 @@ public class ToolTipType : MonoBehaviour {
     public void WriteText(string text)
      {
             TooltipText = text;
-            StartCoroutine(TypeText());
+            StartCoroutine(RaisePaper());
     }
 
-    
+    public IEnumerator RaisePaper()
+    {
+        TypeAudioSource.clip = PaperRaiseSound;
+        TypeAudioSource.Play();
+        for (int i = 0; i< 70; i++ )
+        {
+            Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y + 1, Paper.transform.position.z);
+            yield return new WaitForSeconds(0.001f);
+        }
+        StartCoroutine(TypeText());
+    }
+
     public IEnumerator TypeText()
     {
+        TypeAudioSource.clip = TypeSound;
         foreach(char letter in TooltipText.ToCharArray())
         {
             OutputText.text += letter;
             float RandomPitch = Random.Range(-0.3f, 0.3f);
             float NewPitch = 1 + RandomPitch;
+            
+            if (letter == ' ')
+            {
+                NewPitch = 1 - 0.5f;
+            }
+
             TypeAudioSource.pitch = NewPitch;
             TypeAudioSource.Play();
             yield return new WaitForSeconds(Delay);
         }
-        StartCoroutine(FadeAway());
+        StartCoroutine(DeleteText());
     }
 
-    public IEnumerator FadeAway()
+    public IEnumerator DeleteText()
     {
         int Length = OutputText.text.Length;
         for (int i = 0; i < Length; i++)
@@ -64,7 +91,16 @@ public class ToolTipType : MonoBehaviour {
         }
         ToolTipText = " ";
         last_ToolTipText = " ";
-        
+        StartCoroutine(HidePaper());
+
+    }
+    public IEnumerator HidePaper()
+    {
+        for (int i = 0; i < 70; i++)
+        {
+            Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y - 1, Paper.transform.position.z);
+            yield return new WaitForSeconds(0.0005f);
+        }
     }
 
 }

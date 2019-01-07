@@ -58,7 +58,7 @@ public class ToolTipType : MonoBehaviour {
     {
         TypeAudioSource.clip = PaperRaiseSound;
         TypeAudioSource.Play();
-        for (int i = 0; i< 100; i++ )
+        for (int i = 0; i< 130; i++ )
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y + 1, Paper.transform.position.z);
             yield return new WaitForSeconds(0.0005f);
@@ -103,7 +103,7 @@ public class ToolTipType : MonoBehaviour {
     }
     public IEnumerator HidePaper()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 130; i++)
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y - 1, Paper.transform.position.z);
             yield return new WaitForSeconds(0.0005f);

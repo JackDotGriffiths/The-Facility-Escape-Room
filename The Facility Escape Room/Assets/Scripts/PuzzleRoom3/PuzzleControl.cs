@@ -16,7 +16,7 @@ public class PuzzleControl : MonoBehaviour {
     private int[] Code10 = new int[8];
 
     private bool SequenceStarted = false;
-    private int CodeIndex;
+    public static int CodeIndex = 1;
 
     public MeshRenderer RedIndicator;
     public MeshRenderer GreenIndicator;
@@ -36,15 +36,15 @@ public class PuzzleControl : MonoBehaviour {
     public AudioClip Note4;
 
     public static bool CodePlaying = false;
+    public static bool AwaitingInput = false;
+    public static int[] CurrentlyActiveCode;
 
-    // Use this for initialization
     void Start () {
         GenerateCodes();
 	}
-	
-	// Update is called once per frame
-	void GenerateCodes () {
-		for (int i=0; i < Code1.Length; i++)
+    void GenerateCodes()
+    {
+        for (int i = 0; i < Code1.Length; i++)
         {
             Code1[i] = Random.Range(1, 4);
         }
@@ -94,23 +94,89 @@ public class PuzzleControl : MonoBehaviour {
             Code10[i] = Random.Range(1, 4);
         }
         //------
+        return;
     }
-
-
+    void RestartGame()
+    {
+        ToolTipType.CreateTooltip("Incorrect. Restarting Puzzle.");
+        SimonSaysCanvasControl.RestartGame = false;
+        Debug.Log("Restart");
+        GenerateCodes();
+        Invoke("InitialCodePlay", 8f);
+    }
+    void PlayNextClip()
+    {
+        SimonSaysCanvasControl.PlayNextClip = false;
+        CodeIndex += 1;
+        Debug.Log("Play Next Clip of No. " + CodeIndex);
+        
+        switch (CodeIndex)
+        {
+            case 2:
+                StartCoroutine(PlayCode(Code2));
+                break;
+            case 3:
+                StartCoroutine(PlayCode(Code3));
+                break;
+            case 4:
+                StartCoroutine(PlayCode(Code4));
+                break;
+            case 5:
+                StartCoroutine(PlayCode(Code5));
+                break;
+            case 6:
+                StartCoroutine(PlayCode(Code6));
+                break;
+            case 7:
+                StartCoroutine(PlayCode(Code7));
+                break;
+            case 8:
+                StartCoroutine(PlayCode(Code8));
+                break;
+            case 9:
+                StartCoroutine(PlayCode(Code9));
+                break;
+            case 10:
+                Debug.Log("Epic Win");
+                break;
+        }
+        
+    }
     private void Update()
     {
         if (StartSequencePlaying.PlayerInArea == true && SequenceStarted == false)
         {
             SequenceStarted = true;
-            StartCoroutine(PlayCode(Code1));
+            Invoke("InitialCodePlay",5f);
+        }
+
+        if (SimonSaysCanvasControl.PlayNextClip == true)
+        {
+            AwaitingInput = false;
+            Debug.Log(CodeIndex);
+            SimonSaysCanvasControl.PlayNextClip = false;
+            PlayNextClip();
+        }
+        if (SimonSaysCanvasControl.RestartGame == true)
+        {
+            AwaitingInput = false;
+            Debug.Log(CodeIndex);
+            SimonSaysCanvasControl.RestartGame = false;
+            RestartGame();
         }
     }
-
+    private void InitialCodePlay()
+    {
+        StartCoroutine(PlayCode(Code1));
+        CodeIndex = 1;
+    }
     IEnumerator PlayCode(int[] Code)
     {
-        yield return new WaitForSeconds(4f);
-        Debug.Log("Playing Code");
         CodePlaying = true;
+        Debug.Log(Code.Length);
+        CurrentlyActiveCode = new int[Code.Length];
+        CurrentlyActiveCode = Code;
+        yield return new WaitForSeconds(2.5f);
         for (int i = 0;i<Code.Length; i++ ) {
             Debug.Log(Code[i]);
             if (Code[i] == 1)
@@ -137,17 +203,17 @@ public class PuzzleControl : MonoBehaviour {
                 this.GetComponent<AudioSource>().clip = Note4;
                 this.GetComponent<AudioSource>().Play();
             }
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             ChangeMaterial(RedIndicator, Blank);
             ChangeMaterial(GreenIndicator, Blank);
             ChangeMaterial(YellowIndicator, Blank);
             ChangeMaterial(BlueIndicator, Blank);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
         }
         CodePlaying = false;
+        AwaitingInput = true;
             
     }
-
     public void ChangeMaterial(MeshRenderer objectToChange, Material newMaterial)
     {
         var materials = objectToChange.materials;

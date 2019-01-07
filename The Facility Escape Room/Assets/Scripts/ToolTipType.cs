@@ -9,6 +9,7 @@ public class ToolTipType : MonoBehaviour {
     public static string ToolTipText = " ";
     private string last_ToolTipText = " ";
     private string TooltipText;
+    public static bool ToolTipShowing = false;
 
     public AudioSource TypeAudioSource;
     public AudioClip PaperRaiseSound;
@@ -17,6 +18,7 @@ public class ToolTipType : MonoBehaviour {
     public float Delay = 0.1f;
     public Text OutputText;
     public GameObject Paper;
+    
 
     void Start()
     {
@@ -25,7 +27,11 @@ public class ToolTipType : MonoBehaviour {
 
     public static void CreateTooltip(string text)
     {
-        ToolTipText = text;
+        if(ToolTipShowing == false)
+        {
+            ToolTipShowing = true;
+            ToolTipText = text;
+        }
     }
 
     private void Update()
@@ -52,10 +58,10 @@ public class ToolTipType : MonoBehaviour {
     {
         TypeAudioSource.clip = PaperRaiseSound;
         TypeAudioSource.Play();
-        for (int i = 0; i< 70; i++ )
+        for (int i = 0; i< 100; i++ )
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y + 1, Paper.transform.position.z);
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.0005f);
         }
         StartCoroutine(TypeText());
     }
@@ -78,6 +84,7 @@ public class ToolTipType : MonoBehaviour {
             TypeAudioSource.Play();
             yield return new WaitForSeconds(Delay);
         }
+        yield return new WaitForSeconds(1f);
         StartCoroutine(DeleteText());
     }
 
@@ -96,11 +103,12 @@ public class ToolTipType : MonoBehaviour {
     }
     public IEnumerator HidePaper()
     {
-        for (int i = 0; i < 70; i++)
+        for (int i = 0; i < 100; i++)
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y - 1, Paper.transform.position.z);
             yield return new WaitForSeconds(0.0005f);
         }
+        ToolTipShowing = false;
     }
 
 }

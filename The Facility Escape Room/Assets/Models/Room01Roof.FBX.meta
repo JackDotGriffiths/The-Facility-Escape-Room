@@ -1,52 +1,20 @@
 fileFormatVersion: 2
-guid: 0e702e1c3085cd247a10a82a119db14d
+guid: 3fd6fe23dc8140a42b658afae67ec5b5
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box005
-    100004: Box009
-    100006: Box011
-    100008: Box013
-    100010: Box014
-    100012: Box017
-    100014: Box025
-    100016: //RootNode
-    400000: Box001
-    400002: Box005
-    400004: Box009
-    400006: Box011
-    400008: Box013
-    400010: Box014
-    400012: Box017
-    400014: Box025
-    400016: //RootNode
-    2100000: No Name
-    2300000: Box001
-    2300002: Box005
-    2300004: Box009
-    2300006: Box011
-    2300008: Box013
-    2300010: Box017
-    2300012: Box025
-    2300014: //RootNode
-    3300000: Box001
-    3300002: Box005
-    3300004: Box009
-    3300006: Box011
-    3300008: Box013
-    3300010: Box017
-    3300012: Box025
-    3300014: //RootNode
-    4300000: Box001
-    4300002: Box005
-    4300004: Box009
-    4300006: Box011
-    4300008: Box013
-    4300010: Box017
-    4300012: Box025
-    6400000: //RootNode
-    6400002: Box017
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #193'
+    2100002: LightingGlass
+    2100004: 'Material #192'
+    2100006: 'Material #196'
+    2100008: 'Material #195'
+    2100010: 'Material #197'
+    2100012: 'Material #194'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box012
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -80,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

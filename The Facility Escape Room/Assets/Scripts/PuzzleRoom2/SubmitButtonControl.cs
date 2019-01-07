@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 public class SubmitButtonControl : MonoBehaviour {
 
     private int[] DoorCode = new int[4];
     private int[] InputCode = new int[4];
     private bool Matches = true;
+    private int guesses = 3;
+    private bool GuessedCorrectly = false;
 
     public AudioSource AudioSource;
     public AudioClip Correct;
     public AudioClip Incorrect;
     public int CodeIndex;
     public Text InputText;
+    public Material CodeCorrectMaterial;
+    public MeshRenderer Indicator;
+    
 
     private void Awake()
     {
@@ -39,12 +42,23 @@ public class SubmitButtonControl : MonoBehaviour {
         Matches = true;
         if (InputText.text.Length < 4)
         {
-            ToolTipType.ToolTipText = "You need to enter 4 digits.";
+            ToolTipType.CreateTooltip("You need to enter 4 digits.");
             return;
         }
         if (InputText.text == "_ _ _ _")
         {
-            ToolTipType.ToolTipText = "Enter the code using the keypad.";
+            ToolTipType.CreateTooltip("Enter the code using the keypad.");
+            return;
+        }
+        guesses -= 1;
+        if (guesses == 0)
+        {
+            ToolTipType.CreateTooltip("You have ran out of guesses.");
+            return;
+        }
+        if (GuessedCorrectly == true)
+        {
+            ToolTipType.CreateTooltip("You have already entered this keycode.");
             return;
         }
 
@@ -68,15 +82,18 @@ public class SubmitButtonControl : MonoBehaviour {
             }
         }
 
-
         if (Matches == true)
         {
+            //Player Gets Door Code Correct.
+            ExitDoorControl.DoorCorrectCount += 1;
+            GuessedCorrectly = true;
             Debug.Log("InputMatches");
             Debug.Log("Correct Code = " + DoorCode[0] + "," + DoorCode[1] + "," + DoorCode[2] + "," + DoorCode[3]);
             InputCorrect();
         }
         else if (Matches == false)
         {
+            ToolTipType.CreateTooltip("Incorrect Code. You have " + guesses + " guesses left.");
             Debug.Log("InputWrong");
             Debug.Log("Input Code = " + InputCode[0] + "," + InputCode[1] + "," + InputCode[2] + "," + InputCode[3]);
             Debug.Log("Correct Code = " + DoorCode[0] + "," + DoorCode[1] + "," + DoorCode[2] + "," + DoorCode[3]);
@@ -87,6 +104,7 @@ public class SubmitButtonControl : MonoBehaviour {
     void InputCorrect()
     {
         AudioSource.clip = Correct;
+        Indicator.material = CodeCorrectMaterial;
 
         AudioSource.Play();
     }

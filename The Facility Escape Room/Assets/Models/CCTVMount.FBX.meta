@@ -1,52 +1,51 @@
 fileFormatVersion: 2
-guid: 0e702e1c3085cd247a10a82a119db14d
+guid: bb288961f22999a40b5b7cef71ee8f83
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Box001
-    100002: Box005
-    100004: Box009
-    100006: Box011
-    100008: Box013
-    100010: Box014
-    100012: Box017
-    100014: Box025
-    100016: //RootNode
+    100002: Box002
+    100004: //RootNode
+    100006: Cylinder001
+    100008: Cylinder002
+    100010: Sphere001
+    100012: Sphere002
+    100014: Sphere003
+    100016: Sphere004
     400000: Box001
-    400002: Box005
-    400004: Box009
-    400006: Box011
-    400008: Box013
-    400010: Box014
-    400012: Box017
-    400014: Box025
-    400016: //RootNode
+    400002: Box002
+    400004: //RootNode
+    400006: Cylinder001
+    400008: Cylinder002
+    400010: Sphere001
+    400012: Sphere002
+    400014: Sphere003
+    400016: Sphere004
     2100000: No Name
     2300000: Box001
-    2300002: Box005
-    2300004: Box009
-    2300006: Box011
-    2300008: Box013
-    2300010: Box017
-    2300012: Box025
-    2300014: //RootNode
+    2300002: Box002
+    2300004: Cylinder001
+    2300006: Cylinder002
+    2300008: Sphere001
+    2300010: Sphere002
+    2300012: Sphere003
+    2300014: Sphere004
     3300000: Box001
-    3300002: Box005
-    3300004: Box009
-    3300006: Box011
-    3300008: Box013
-    3300010: Box017
-    3300012: Box025
-    3300014: //RootNode
+    3300002: Box002
+    3300004: Cylinder001
+    3300006: Cylinder002
+    3300008: Sphere001
+    3300010: Sphere002
+    3300012: Sphere003
+    3300014: Sphere004
     4300000: Box001
-    4300002: Box005
-    4300004: Box009
-    4300006: Box011
-    4300008: Box013
-    4300010: Box017
-    4300012: Box025
-    6400000: //RootNode
-    6400002: Box017
+    4300002: Box002
+    4300004: Sphere001
+    4300006: Sphere002
+    4300008: Sphere003
+    4300010: Sphere004
+    4300012: Cylinder001
+    4300014: Cylinder002
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -78,9 +77,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 1.3
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

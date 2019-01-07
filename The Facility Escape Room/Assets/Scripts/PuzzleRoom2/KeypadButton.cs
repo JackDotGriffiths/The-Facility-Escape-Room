@@ -13,15 +13,6 @@ public class KeypadButton : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        characterController = GameObject.Find("Player").GetComponent<CharacterController>();
-
-        characterController.enabled = false;
-        characterController.GetComponent<FirstPersonController>().enabled = false;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-
         Value = int.Parse(this.gameObject.name);
 	}
 	

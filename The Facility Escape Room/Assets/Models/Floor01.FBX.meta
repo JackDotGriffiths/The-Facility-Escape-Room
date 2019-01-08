@@ -18,6 +18,10 @@ ModelImporter:
     100024: Cylinder001
     100026: Box010
     100028: Box011
+    100030: Floor
+    100032: Stairs
+    100034: Walls
+    100036: Ceiling
     400000: Box001
     400002: //RootNode
     400004: PhysCamera001
@@ -33,6 +37,10 @@ ModelImporter:
     400024: Cylinder001
     400026: Box010
     400028: Box011
+    400030: Floor
+    400032: Stairs
+    400034: Walls
+    400036: Ceiling
     2100000: 'Material #26'
     2100002: Floor
     2100004: Pit
@@ -44,6 +52,13 @@ ModelImporter:
     2100016: WindowBackground
     2100018: Glow
     2100020: 'Material #146'
+    2100022: 'Material #193'
+    2100024: LightingGlass
+    2100026: 'Material #192'
+    2100028: 'Material #196'
+    2100030: 'Material #195'
+    2100032: 'Material #197'
+    2100034: 'Material #194'
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -56,6 +71,10 @@ ModelImporter:
     2300018: Cylinder001
     2300020: Box010
     2300022: Box011
+    2300024: Floor
+    2300026: Stairs
+    2300028: Walls
+    2300030: Ceiling
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -68,6 +87,10 @@ ModelImporter:
     3300018: Cylinder001
     3300020: Box010
     3300022: Box011
+    3300024: Floor
+    3300026: Stairs
+    3300028: Walls
+    3300030: Ceiling
     4300000: Box001
     4300002: Box002
     4300004: Box003
@@ -80,6 +103,10 @@ ModelImporter:
     4300018: Cylinder001
     4300020: Box010
     4300022: Box011
+    4300024: Walls
+    4300026: Floor
+    4300028: Stairs
+    4300030: Ceiling
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -113,7 +140,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

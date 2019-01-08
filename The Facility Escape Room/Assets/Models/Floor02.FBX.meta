@@ -29,6 +29,7 @@ ModelImporter:
     100046: Torus002
     100048: Torus003
     100050: Torus004
+    100052: Walls
     400000: Box009
     400002: Box010
     400004: Box011
@@ -55,6 +56,7 @@ ModelImporter:
     400046: Torus002
     400048: Torus003
     400050: Torus004
+    400052: Walls
     2100000: No Name
     2300000: Box010
     2300002: Box011
@@ -80,6 +82,7 @@ ModelImporter:
     2300042: Torus002
     2300044: Torus003
     2300046: Torus004
+    2300048: Walls
     3300000: Box010
     3300002: Box011
     3300004: Box012
@@ -104,6 +107,7 @@ ModelImporter:
     3300042: Torus002
     3300044: Torus003
     3300046: Torus004
+    3300048: Walls
     4300000: Cylinder002
     4300002: Box010
     4300004: Box011
@@ -128,6 +132,7 @@ ModelImporter:
     4300042: Torus003
     4300044: Box028
     4300046: Torus004
+    4300048: Walls
     6400000: Box010
     6400002: Box011
     6400004: Box012

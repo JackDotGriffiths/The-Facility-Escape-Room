@@ -10,8 +10,6 @@ public class CloseDoorOpenDoor : MonoBehaviour {
     public AudioSource Door1Audio;
     public AudioSource Door2Audio;
 
-    public GameObject AreaToHide;
-    public GameObject AreaToShow;
 
     private bool SequenceStarted = false;
 
@@ -32,8 +30,6 @@ public class CloseDoorOpenDoor : MonoBehaviour {
         Door1.Play("DoorClose");
         Door1Audio.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(5f);
-        AreaToHide.SetActive(false);
-        AreaToShow.SetActive(true);
         Door2.Play("DoorOpen");
         Door2Audio.GetComponent<AudioSource>().Play();
     }

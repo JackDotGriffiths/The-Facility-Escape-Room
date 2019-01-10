@@ -1,30 +1,38 @@
 fileFormatVersion: 2
-guid: 4fd2f6787096f594e85273941a1849f4
+guid: 452a36910f0538346a5553949f72d48e
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box011
-    100002: Box012
-    100004: Box013
+    100000: Ceiling
+    100002: Floor
+    100004: SkirtingBoard
     100006: //RootNode
-    400000: Box011
-    400002: Box012
-    400004: Box013
+    100008: Walls
+    400000: Ceiling
+    400002: Floor
+    400004: SkirtingBoard
     400006: //RootNode
+    400008: Walls
     2100000: No Name
-    2100002: 'Material #13'
-    2100004: Glow
-    2300000: Box011
-    2300002: Box012
-    2300004: Box013
-    2300006: //RootNode
-    3300000: Box011
-    3300002: Box012
-    3300004: Box013
-    3300006: //RootNode
-    4300000: Box011
-    4300002: Box012
-    4300004: Box013
+    2100002: 'Material #27'
+    2100004: 'Material #26'
+    2100006: 'Material #30'
+    2100008: 'Material #29'
+    2100010: 'Material #31'
+    2100012: 'Material #28'
+    2100014: Glow
+    2300000: Ceiling
+    2300002: Floor
+    2300004: SkirtingBoard
+    2300006: Walls
+    3300000: Ceiling
+    3300002: Floor
+    3300004: SkirtingBoard
+    3300006: Walls
+    4300000: Walls
+    4300002: Floor
+    4300004: SkirtingBoard
+    4300006: Ceiling
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -64,7 +72,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

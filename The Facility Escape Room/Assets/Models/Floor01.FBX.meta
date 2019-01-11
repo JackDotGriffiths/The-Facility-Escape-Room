@@ -107,6 +107,9 @@ ModelImporter:
     4300026: Floor
     4300028: Stairs
     4300030: Ceiling
+    6400000: Floor
+    6400002: Stairs
+    6400004: Walls
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -142,7 +145,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

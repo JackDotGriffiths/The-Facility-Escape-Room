@@ -25,6 +25,7 @@ ModelImporter:
     4300000: Box011
     4300002: Box012
     4300004: Box013
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -58,7 +59,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

@@ -28,6 +28,8 @@ GameObject:
   - component: {fileID: 65176693564162464}
   - component: {fileID: 65281004415784804}
   - component: {fileID: 65343364227460780}
+  - component: {fileID: 65676351102259254}
+  - component: {fileID: 114013067620562500}
   m_Layer: 0
   m_Name: Maze T
   m_TagString: Untagged
@@ -41,8 +43,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447398294740558}
-  m_LocalRotation: {x: -0.5000008, y: 0.49999928, z: 0.49999928, w: 0.5000008}
-  m_LocalPosition: {x: -73.521, y: 51.713, z: -141.05}
+  m_LocalRotation: {x: 0.000000029802319, y: 0.000000029802319, z: 0.0000019073484,
+    w: 1}
+  m_LocalPosition: {x: 25.629974, y: -4.1849546, z: 7.3420057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +66,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 55cde76f2786a4442a9ab292cf84592d, type: 3}
+  - {fileID: 2100000, guid: e64daad41e46bc549a45ac2e414804ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,6 +153,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.721094, y: 7.200003, z: 0.18552382}
   m_Center: {x: -3.495512, y: 0.00004220009, z: 1.2711434}
+--- !u!65 &65676351102259254
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447398294740558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.721092, y: 7.200003, z: 2.7000074}
+  m_Center: {x: -3.4955115, y: 0.00004213855, z: 0.013905335}
 --- !u!65 &65677980033940518
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -174,3 +189,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.199875, y: 0.1632349, z: 2.7000072}
   m_Center: {x: -4.7561216, y: -1.2357008, z: 0.013901472}
+--- !u!114 &114013067620562500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447398294740558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14674f945205b5a4d801752350d9ef6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCrouched: 0
+  Player: {fileID: 0}

@@ -48,52 +48,58 @@ public class PuzzleControl : MonoBehaviour {
     {
         for (int i = 0; i < Code1.Length; i++)
         {
-            Code1[i] = Random.Range(1, 4);
+            Code1[i] = Random.Range(1, 5);
+            string printString = "Code 1 :";
+            for (int x =0; x < Code1.Length; x++)
+            {
+                printString +=  " " + Code1[x];
+            }
+            Debug.Log(printString);
         }
         //-------
         for (int i = 0; i < Code2.Length; i++)
         {
-            Code2[i] = Random.Range(1, 4);
+            Code2[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code3.Length; i++)
         {
-            Code3[i] = Random.Range(1, 4);
+            Code3[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code4.Length; i++)
         {
-            Code4[i] = Random.Range(1, 4);
+            Code4[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code5.Length; i++)
         {
-            Code5[i] = Random.Range(1, 4);
+            Code5[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code6.Length; i++)
         {
-            Code6[i] = Random.Range(1, 4);
+            Code6[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code7.Length; i++)
         {
-            Code7[i] = Random.Range(1, 4);
+            Code7[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code8.Length; i++)
         {
-            Code8[i] = Random.Range(1, 4);
+            Code8[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code9.Length; i++)
         {
-            Code9[i] = Random.Range(1, 4);
+            Code9[i] = Random.Range(1, 5);
         }
         //------
         for (int i = 0; i < Code10.Length; i++)
         {
-            Code10[i] = Random.Range(1, 4);
+            Code10[i] = Random.Range(1, 5);
         }
         //------
         return;

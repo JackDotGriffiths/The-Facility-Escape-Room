@@ -35,6 +35,8 @@ public class PuzzleControl : MonoBehaviour {
     public AudioClip Note3;
     public AudioClip Note4;
 
+    public GameObject Door;
+
     public static bool CodePlaying = false;
     public static bool AwaitingInput = false;
     public static int[] CurrentlyActiveCode;
@@ -137,6 +139,8 @@ public class PuzzleControl : MonoBehaviour {
                 StartCoroutine(PlayCode(Code9));
                 break;
             case 10:
+                Door.GetComponent<Animator>().Play("DoorOpen");
+                Door.GetComponent<AudioSource>().Play();
                 Debug.Log("Epic Win");
                 break;
         }

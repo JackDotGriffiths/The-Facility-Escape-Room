@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class EscapeEntranceControl : MonoBehaviour {
 
     public GameObject Player;
-    public CharacterController characterController;
+    public static CharacterController characterController;
 
     public GameObject DoorToClose;
 
@@ -29,13 +29,6 @@ public class EscapeEntranceControl : MonoBehaviour {
     public string Message2;
 
     private bool PlayedSequence = false;
-
-    public void Start()
-    {
-        DoorToClose.GetComponent<Animator>().Play("DoorOpen");
-        DoorToClose.GetComponent<AudioSource>().Play();
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -83,7 +76,7 @@ public class EscapeEntranceControl : MonoBehaviour {
         //Punch the Player
         yield return new WaitForSeconds(3f);
 
-        LockPlayerControls();
+        LockUnlockPlayer.LockPlayer();
         Entity.volume = 0.8f;
         Entity.clip = Punch;
         Entity.loop = false;
@@ -98,6 +91,7 @@ public class EscapeEntranceControl : MonoBehaviour {
         ToolTipType.CreateTooltip("Welcome to The Facility.");
 
         yield return new WaitForSeconds(6);
+        LockUnlockPlayer.UnlockPlayer();
         Player.transform.position = NewSpawnPoint.transform.position;
         Player.GetComponentInChildren<AudioListener>().enabled = true;
         FadeScreenControl.Toggle();
@@ -123,16 +117,6 @@ public class EscapeEntranceControl : MonoBehaviour {
     void TurnOnLight(GameObject light)
     {
         light.GetComponent<MeshRenderer>().material = LightOn;
-        light.GetComponent<Light>().enabled = true;
-    }
-    void LockPlayerControls()
-    {
-        characterController.enabled = false;
-        characterController.GetComponent<FirstPersonController>().enabled = false;
-    }
-    void UnlockPlayerControls()
-    {
-        characterController.enabled = true;
-        characterController.GetComponent<FirstPersonController>().enabled = true;
+        light.GetComponentInChildren<Light>().enabled = true;
     }
 }

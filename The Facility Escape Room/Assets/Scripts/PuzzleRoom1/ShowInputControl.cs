@@ -33,26 +33,17 @@ public class ShowInputControl : MonoBehaviour {
     }
 
     void Update () {
-		if (ObjectDetection.LookAtObject == "Plynth" && Input.GetKeyDown(KeyCode.E) && ShowingInput == false && InCollider == true && InputControlValidation.guessed == false)
+		if (Input.GetKeyDown(KeyCode.E) && ShowingInput == false && InCollider == true && InputControlValidation.guessed == false)
         {
-            characterController.enabled = false;
-            characterController.GetComponent<FirstPersonController>().enabled = false;
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
+            LockUnlockPlayer.LockPlayer();
 
             InputField.SetActive(true);
             SubmitButton.SetActive(true);
             ShowingInput = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && InputField.activeInHierarchy == true && SubmitButton.activeInHierarchy == true)
         {
-            characterController.enabled = true;
-            characterController.GetComponent<FirstPersonController>().enabled = true;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            LockUnlockPlayer.UnlockPlayer();
 
             InputField.SetActive(false);
             SubmitButton.SetActive(false);

@@ -89,6 +89,7 @@ public class SubmitButtonControl : MonoBehaviour {
             GuessedCorrectly = true;
             Debug.Log("InputMatches");
             Debug.Log("Correct Code = " + DoorCode[0] + "," + DoorCode[1] + "," + DoorCode[2] + "," + DoorCode[3]);
+
             InputCorrect();
         }
         else if (Matches == false)
@@ -105,7 +106,6 @@ public class SubmitButtonControl : MonoBehaviour {
     {
         AudioSource.clip = Correct;
         Indicator.material = CodeCorrectMaterial;
-
         AudioSource.Play();
     }
     void InputWrong()

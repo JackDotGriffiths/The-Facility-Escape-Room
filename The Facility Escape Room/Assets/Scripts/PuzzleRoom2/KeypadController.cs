@@ -35,23 +35,17 @@ public class KeypadController : MonoBehaviour {
 
     void Update()
     {
-        if (ObjectDetection.LookAtObject == this.name && Input.GetKeyDown(KeyCode.E) && ShowingInput == false && InCollider == true)
+        if (Input.GetKeyDown(KeyCode.E) && ShowingInput == false && InCollider == true)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            characterController.enabled = false;
-            characterController.GetComponent<FirstPersonController>().enabled = false;
+            LockUnlockPlayer.LockPlayer();
 
 
             InputKeypadUI.SetActive(true);
             ShowingInput = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && InputKeypadUI.activeInHierarchy == true)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            characterController.enabled = true;
-            characterController.GetComponent<FirstPersonController>().enabled = true;
+            LockUnlockPlayer.UnlockPlayer();
 
 
             InputKeypadUI.SetActive(false);

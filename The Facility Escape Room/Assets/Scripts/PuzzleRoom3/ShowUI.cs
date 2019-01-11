@@ -31,24 +31,16 @@ public class ShowUI : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && ShowingInput == false && InCollider == true && PuzzleControl.AwaitingInput == true && PuzzleControl.CodePlaying != true)
         {
-            characterController.enabled = false;
-            characterController.GetComponent<FirstPersonController>().enabled = false;
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            LockUnlockPlayer.LockPlayer();
 
 
             SimonSaysUI.SetActive(true);
 
             ShowingInput = true;
         }
-        if (PuzzleControl.AwaitingInput == false)
+        if (PuzzleControl.AwaitingInput == false && SimonSaysUI.activeInHierarchy == true)
         {
-            characterController.enabled = true;
-            characterController.GetComponent<FirstPersonController>().enabled = true;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            LockUnlockPlayer.UnlockPlayer();
 
             SimonSaysUI.SetActive(false); 
 

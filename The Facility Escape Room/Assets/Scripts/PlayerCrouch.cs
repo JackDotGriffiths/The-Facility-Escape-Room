@@ -24,11 +24,11 @@ public class PlayerCrouch : MonoBehaviour {
     {
         if (PlayerCrouching == true)
         {
-            this.gameObject.transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.7f, 0.85f, 1.7f), Time.deltaTime * 6);
+            this.gameObject.transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2.5f, 0.85f, 2.5f), Time.deltaTime * 6);
         }
         else
         {
-            this.gameObject.transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.7f,1.7f,1.7f), Time.deltaTime * 6);
+            this.gameObject.transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(2.5f,2.5f,2.5f), Time.deltaTime * 6);
         }
     }
 }

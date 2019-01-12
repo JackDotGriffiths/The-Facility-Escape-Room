@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -33,12 +33,12 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 256
-  m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0
+  m_DefaultReflectionResolution: 512
+  m_ReflectionBounces: 2
+  m_ReflectionIntensity: 0.177
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0.15307534, g: 0.15677911, b: 0.14608043, a: 0.177}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48,8 +48,8 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 0.69
-    m_AlbedoBoost: 3.14
+    m_IndirectOutputScale: 1.84
+    m_AlbedoBoost: 2.63
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
@@ -57,27 +57,27 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 10
     m_Resolution: 4
-    m_BakeResolution: 32
+    m_BakeResolution: 40
     m_AtlasSize: 1024
     m_AO: 1
     m_AOMaxDistance: 6
-    m_CompAOExponent: 1.74
-    m_CompAOExponentDirect: 1.5
-    m_Padding: 2
-    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000,
+    m_CompAOExponent: 1.24
+    m_CompAOExponentDirect: 1.97
+    m_Padding: 4
+    m_LightmapParameters: {fileID: 15200, guid: 0000000000000000f000000000000000,
       type: 0}
     m_LightmapsBakeMode: 1
-    m_TextureCompression: 1
+    m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 0
     m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 24
+    m_PVRDirectSampleCount: 30
     m_PVRSampleCount: 280
-    m_PVRBounces: 1
+    m_PVRBounces: 2
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
@@ -90,7 +90,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 2c291c443936c2048bebdd0591a695c7,
+    type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
@@ -749,10 +750,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 12.09
-  m_SpotAngle: 88
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 9.44
+  m_Range: 18.91
+  m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -771,7 +772,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 8.118591, y: 8.09649}
-  m_BounceIntensity: 0.1
+  m_BounceIntensity: 3.9
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 2
@@ -7095,7 +7096,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &142411267
 Transform:
@@ -13001,8 +13002,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4876924, y: 8.668279, z: 9.000004}
-  m_Center: {x: -0.000040311686, y: -1.0902255, z: 4.5000486}
+  m_Size: {x: 6.4876924, y: 2.2002358, z: 9.000004}
+  m_Center: {x: -0.000040733372, y: -4.3242474, z: 4.500049}
 --- !u!1 &266817604
 GameObject:
   m_ObjectHideFlags: 0
@@ -15699,7 +15700,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!82 &341806037
 AudioSource:
@@ -31005,10 +31006,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 12.09
-  m_SpotAngle: 88
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 9.44
+  m_Range: 18.91
+  m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -31027,7 +31028,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 8.118591, y: 8.09649}
-  m_BounceIntensity: 0.1
+  m_BounceIntensity: 3.9
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 2
@@ -49515,7 +49516,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &960904773
 Transform:
@@ -51792,7 +51793,7 @@ Light:
   serializedVersion: 8
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.3
   m_Range: 12.09
   m_SpotAngle: 88
   m_CookieSize: 10
@@ -60275,7 +60276,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1189668561
 Transform:
@@ -61309,7 +61310,7 @@ Light:
   serializedVersion: 8
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.3
   m_Range: 12.09
   m_SpotAngle: 88
   m_CookieSize: 10
@@ -66718,10 +66719,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 12.09
-  m_SpotAngle: 88
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 9.44
+  m_Range: 18.91
+  m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -66740,7 +66741,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 8.118591, y: 8.09649}
-  m_BounceIntensity: 0.1
+  m_BounceIntensity: 3.9
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 2
@@ -72472,8 +72473,8 @@ AudioReverbZone:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1448871921}
   m_Enabled: 1
-  m_MinDistance: 18.839287
-  m_MaxDistance: 64.874146
+  m_MinDistance: 63.18216
+  m_MaxDistance: 64.29572
   m_ReverbPreset: 22
   m_Room: -1000
   m_RoomHF: -1000
@@ -93654,8 +93655,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4876904, y: 8.668282, z: 9.000004}
-  m_Center: {x: -0.000018085864, y: -1.0902116, z: 4.500037}
+  m_Size: {x: 6.4876904, y: 2.212761, z: 9.000004}
+  m_Center: {x: -0.000018188892, y: -4.3179736, z: 4.500037}
 --- !u!1 &1758185820
 GameObject:
   m_ObjectHideFlags: 0
@@ -95819,7 +95820,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1806979851
 Transform:
@@ -96946,7 +96947,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!65 &1839030977
 BoxCollider:
@@ -97828,7 +97829,7 @@ Light:
   serializedVersion: 8
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.3
   m_Range: 12.09
   m_SpotAngle: 88
   m_CookieSize: 10
@@ -101105,7 +101106,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!65 &1928760220
 BoxCollider:
@@ -105304,8 +105305,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4876924, y: 8.668279, z: 9.000004}
-  m_Center: {x: -0.000032682292, y: -1.0902102, z: 4.5000525}
+  m_Size: {x: 6.4876924, y: 2.2445965, z: 9.000004}
+  m_Center: {x: -0.0000331018, y: -4.302052, z: 4.500053}
 --- !u!1 &2019114979
 GameObject:
   m_ObjectHideFlags: 0
@@ -107508,7 +107509,7 @@ Light:
   serializedVersion: 8
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.3
   m_Range: 12.09
   m_SpotAngle: 88
   m_CookieSize: 10
@@ -110153,10 +110154,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 12.09
-  m_SpotAngle: 88
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 9.44
+  m_Range: 18.91
+  m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -110175,7 +110176,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 8.118591, y: 8.09649}
-  m_BounceIntensity: 0.1
+  m_BounceIntensity: 3.9
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 2

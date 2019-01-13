@@ -84,8 +84,8 @@ public class InputControlValidation : MonoBehaviour {
 
             InputField.SetActive(false);
             SubmitButton.SetActive(false);
+
+            ToolTipType.CreateTooltip("Incorrect Input.");
         }
-        //if correct, turn indicator green and open door.
-        //if incorrect, turn indicator red. 
     }
 }

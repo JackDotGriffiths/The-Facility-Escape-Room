@@ -9,6 +9,8 @@ public class ToolTipType : MonoBehaviour {
     public static string ToolTipText = " ";
     private string last_ToolTipText = " ";
     private string TooltipText;
+    private float PositionDifference;
+
     public static bool ToolTipShowing = false;
 
     public AudioSource TypeAudioSource;
@@ -18,11 +20,20 @@ public class ToolTipType : MonoBehaviour {
     public float Delay = 0.1f;
     public Text OutputText;
     public GameObject Paper;
+    public GameObject Target;
+
+
     
 
     void Start()
     {
         OutputText.text = "";
+        GenerateDifference();
+    }
+
+    void GenerateDifference()
+    {
+        PositionDifference = Target.transform.position.y - Paper.transform.position.y;
     }
 
     public static void CreateTooltip(string text)
@@ -58,7 +69,7 @@ public class ToolTipType : MonoBehaviour {
     {
         TypeAudioSource.clip = PaperRaiseSound;
         TypeAudioSource.Play();
-        for (int i = 0; i< 130; i++ )
+        for (int i = 0; i< PositionDifference; i++ )
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y + 1, Paper.transform.position.z);
             yield return new WaitForSeconds(0.0005f);
@@ -103,12 +114,13 @@ public class ToolTipType : MonoBehaviour {
     }
     public IEnumerator HidePaper()
     {
-        for (int i = 0; i < 130; i++)
+        for (int i = 0; i < PositionDifference; i++)
         {
             Paper.transform.position = new Vector3(Paper.transform.position.x, Paper.transform.position.y - 1, Paper.transform.position.z);
             yield return new WaitForSeconds(0.0005f);
         }
         ToolTipShowing = false;
+        GenerateDifference();
     }
 
 }

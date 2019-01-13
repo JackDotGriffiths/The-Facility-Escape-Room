@@ -41,9 +41,12 @@ public class PuzzleControl : MonoBehaviour {
     public static bool AwaitingInput = false;
     public static int[] CurrentlyActiveCode;
 
-    void Start () {
+    void Awake() {
         GenerateCodes();
-	}
+        StartSequencePlaying.PlayerInArea = false;
+        SequenceStarted = false;
+
+    }
     void GenerateCodes()
     {
         for (int i = 0; i < Code1.Length; i++)

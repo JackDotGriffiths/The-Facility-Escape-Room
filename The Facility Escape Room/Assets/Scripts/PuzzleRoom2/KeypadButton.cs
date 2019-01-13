@@ -12,7 +12,7 @@ public class KeypadButton : MonoBehaviour {
     public CharacterController characterController;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         Value = int.Parse(this.gameObject.name);
 	}
 	

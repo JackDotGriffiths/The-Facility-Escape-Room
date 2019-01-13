@@ -28,7 +28,7 @@ public class KeypadController : MonoBehaviour {
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         ShowingInput = false;
     }

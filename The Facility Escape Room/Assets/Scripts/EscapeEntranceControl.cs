@@ -30,11 +30,6 @@ public class EscapeEntranceControl : MonoBehaviour {
 
     private bool PlayedSequence = false;
 
-    private void Start()
-    {
-        DoorToClose.GetComponent<Animator>().Play("DoorOpen");
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player" && PlayedSequence == false)

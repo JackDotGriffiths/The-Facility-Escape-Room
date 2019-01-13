@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class RandomWordSelector : MonoBehaviour {
 
-    public string[] PossibleWords = new string[] {"murder","test","control","escape","puzzle","death","torture","suffering","examine","experiment","goop","eradication","trapped","danger","faint","cleanse"};
+    public string[] PossibleWords = new string[] {"test","control","escape","puzzle","examine","experiment","eradication","trapped","danger","science","cleanse"};
 
     public static string ChosenWord;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         ChosenWord = PossibleWords[Random.Range(0, PossibleWords.Length)];
         Debug.Log("Chosen Word is " + ChosenWord);
 	}

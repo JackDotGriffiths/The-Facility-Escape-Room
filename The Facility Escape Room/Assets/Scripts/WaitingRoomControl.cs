@@ -50,6 +50,7 @@ public class WaitingRoomControl : MonoBehaviour {
 
     public IEnumerator CallNumber()
     {
+        yield return new WaitForSeconds(6f);
         for (int i = 0; i < TestAreas.Length; i++)
         {
             TestAreas[i].SetActive(false);

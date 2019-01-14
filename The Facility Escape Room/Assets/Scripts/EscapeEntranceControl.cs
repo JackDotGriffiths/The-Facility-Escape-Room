@@ -88,7 +88,7 @@ public class EscapeEntranceControl : MonoBehaviour {
         FadeScreenControl.Toggle();
         Player.GetComponentInChildren<AudioListener>().enabled = false;
         yield return new WaitForSeconds(2);
-        ToolTipType.CreateTooltip("Welcome to The Facility.");
+        ToolTipType.CreateTooltip(Message2);
 
         yield return new WaitForSeconds(6);
         LockUnlockPlayer.UnlockPlayer();

@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Saw Themed Escape Room
+  companyName: Jack Griffiths
+  productName: Portal Themed Escape Room
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -44,7 +44,7 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 21300000, guid: 3d594f2983e221c48b78c16060b9a155, type: 3}
     duration: 3.8
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: ed02ab1ff6e118744911482f87263f5b,
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 699440c525d6a774b9fe862e6c8194b1,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -256,9 +256,16 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: ed02ab1ff6e118744911482f87263f5b,
+  resolutionDialogBanner: {fileID: 2800000, guid: 699440c525d6a774b9fe862e6c8194b1,
     type: 3}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 93fe40a80b56f1f4191b75c576b6db5c, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone

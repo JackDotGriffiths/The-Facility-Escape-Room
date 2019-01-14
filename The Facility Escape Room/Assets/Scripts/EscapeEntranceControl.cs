@@ -28,7 +28,12 @@ public class EscapeEntranceControl : MonoBehaviour {
     public string Message1;
     public string Message2;
 
-    private bool PlayedSequence = false;
+    private bool PlayedSequence;
+
+    private void Awake()
+    {
+        PlayedSequence = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -101,6 +106,7 @@ public class EscapeEntranceControl : MonoBehaviour {
         TurnOnLight(Light3);
         TurnOnLight(Light4);
         TurnOnLight(Light5);
+        PlayedSequence = false;
 
 
 

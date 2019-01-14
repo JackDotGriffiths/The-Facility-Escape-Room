@@ -50,11 +50,11 @@ public class WaitingRoomControl : MonoBehaviour {
 
     public IEnumerator CallNumber()
     {
-        yield return new WaitForSeconds(6f);
         for (int i = 0; i < TestAreas.Length; i++)
         {
             TestAreas[i].SetActive(false);
         }
+        yield return new WaitForSeconds(6f);
 
         int CurrentNumber = PlayerPrefs.GetInt("WaitingNumber");
         PlayerPrefs.SetInt("WaitingNumber", CurrentNumber + 1);
@@ -71,7 +71,7 @@ public class WaitingRoomControl : MonoBehaviour {
         NumberText4.text = NewNumber.ToString();
 
 
-        int RandomWait = Random.Range(7, 13);
+        int RandomWait = Random.Range(15, 25);
         yield return new WaitForSeconds(RandomWait);
 
         Door.GetComponent<Animator>().Play("DoorOpen");

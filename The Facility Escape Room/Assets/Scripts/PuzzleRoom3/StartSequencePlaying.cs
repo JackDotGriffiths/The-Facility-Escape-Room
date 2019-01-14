@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class StartSequencePlaying : MonoBehaviour {
 
-    public static bool PlayerInArea = false;
+    public static bool PlayerInArea;
+    public static bool CompletedPuzzle;
 
+    private void Awake()
+    {
+        CompletedPuzzle = false;
+        PlayerInArea = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

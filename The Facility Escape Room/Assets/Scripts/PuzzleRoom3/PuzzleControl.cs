@@ -148,6 +148,8 @@ public class PuzzleControl : MonoBehaviour {
                 StartCoroutine(PlayCode(Code9));
                 break;
             case 10:
+                SequenceStarted = false;
+                StartSequencePlaying.CompletedPuzzle = true;
                 Door.GetComponent<Animator>().Play("DoorOpen");
                 Door.GetComponent<AudioSource>().Play();
                 Debug.Log("Epic Win");
@@ -157,7 +159,7 @@ public class PuzzleControl : MonoBehaviour {
     }
     private void Update()
     {
-        if (StartSequencePlaying.PlayerInArea == true && SequenceStarted == false)
+        if (StartSequencePlaying.PlayerInArea == true && SequenceStarted == false && StartSequencePlaying.CompletedPuzzle == false)
         {
             SequenceStarted = true;
             Invoke("InitialCodePlay",5f);
@@ -191,27 +193,30 @@ public class PuzzleControl : MonoBehaviour {
         CurrentlyActiveCode = Code;
         yield return new WaitForSeconds(2.5f);
         for (int i = 0;i<Code.Length; i++ ) {
-            Debug.Log(Code[i]);
             if (Code[i] == 1)
             {
+                Debug.Log("Red");
                 ChangeMaterial(RedIndicator, Red);
                 this.GetComponent<AudioSource>().clip = Note1;
                 this.GetComponent<AudioSource>().Play();
             }
             else if (Code[i] == 2)
             {
+                Debug.Log("Green");
                 ChangeMaterial(GreenIndicator, Green);
                 this.GetComponent<AudioSource>().clip = Note2;
                 this.GetComponent<AudioSource>().Play();
             }
             else if (Code[i] == 3)
             {
+                Debug.Log("Yellow");
                 ChangeMaterial(YellowIndicator, Yellow);
                 this.GetComponent<AudioSource>().clip = Note3;
                 this.GetComponent<AudioSource>().Play();
             }
             else if (Code[i] == 4)
             {
+                Debug.Log("Blue");
                 ChangeMaterial(BlueIndicator, Blue);
                 this.GetComponent<AudioSource>().clip = Note4;
                 this.GetComponent<AudioSource>().Play();

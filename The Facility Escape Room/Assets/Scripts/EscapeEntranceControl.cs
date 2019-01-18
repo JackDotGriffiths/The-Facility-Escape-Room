@@ -30,6 +30,8 @@ public class EscapeEntranceControl : MonoBehaviour {
 
     private bool PlayedSequence;
 
+    public static bool PlayerCanPause = true;
+
     private void Awake()
     {
         PlayedSequence = false;
@@ -46,6 +48,7 @@ public class EscapeEntranceControl : MonoBehaviour {
 
     IEnumerator RunSequence()
     {
+        PlayerCanPause = false;
         //Close Door Behind  the Player
         DoorToClose.GetComponent<Animator>().Play("DoorClose");
         DoorToClose.GetComponent<AudioSource>().Play();
@@ -107,6 +110,7 @@ public class EscapeEntranceControl : MonoBehaviour {
         TurnOnLight(Light4);
         TurnOnLight(Light5);
         PlayedSequence = false;
+        PlayerCanPause = true;
 
 
 
